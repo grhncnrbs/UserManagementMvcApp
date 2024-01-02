@@ -1,1 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/SpringMvcDb?useSSL=false&ServerTimeZone=TR&useLegacyDateTimeCode=false
+    username: postgres
+    password: 4412199.Gmc
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
 
+#logging:
+#  level:
+#    org:
+#      hibernate:
+#        SQL: DEBUG

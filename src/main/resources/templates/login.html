@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://thymeleaf.org" th:replace="~{base::layout(~{::section})}">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
 </head>
 <body>
-$END$
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-header text-center fs-4">Register Page</div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label>Enter Email</label>
+                                <input type="text" name="email" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label>EnterPassword</label>
+                                <input type="text" name="password" class="form-control">
+                            </div>
+                            <button class="btn btn-primary col-md-12">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
