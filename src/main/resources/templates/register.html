@@ -16,7 +16,7 @@
                         <th:block th:text="${@sessionService.removeMessageFromSession()}"></th:block>
                     </th:block>
                     <div class="card-body">
-                        <form action="create-user" method="post">
+                        <form th:action ="@{/create-user}" th:method="post">
                             <div class="mb-3">
                                 <label>Enter Full Name</label>
                                 <input type="text" name="fullName" class="form-control">
