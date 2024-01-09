@@ -33,15 +33,6 @@ public class SecurityConfiguration {
         return daoAuthenticationProvider;
     }
 
-   /* @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
-        return configuration.getAuthenticationManager();
-    }*/
-
-    protected void configure (AuthenticationManagerBuilder authenticationManagerBuilder) {
-        authenticationManagerBuilder.authenticationProvider(getDaoAuthenticationProvider());
-    }
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http

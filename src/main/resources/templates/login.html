@@ -14,6 +14,9 @@
                     <th:block th:if="${param.error}" class="alert alert-danger">
                         <p class="text-center text-danger">Kullanıcı adı veya parola hatalı.</p>
                     </th:block>
+                    <th:block th:if="${param.logout}">
+                        <p class="text-center text-success">Başarıyla çıkış yaptınız.</p>
+                    </th:block>
                     <div class="card-body">
                         <form th:action="@{/login}" th:method="post">
                             <div class="mb-3">
