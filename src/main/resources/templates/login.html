@@ -11,18 +11,18 @@
             <div class="col-md-6 offset-md-3">
                 <div class="card">
                     <div class="card-header text-center fs-4">Login Page</div>
-                    <div th:if="${param.error}" class="alert alert-danger">
-                        Kullanıcı adı veya parola hatalı.
-                    </div>
+                    <th:block th:if="${param.error}" class="alert alert-danger">
+                        <p class="text-center text-danger">Kullanıcı adı veya parola hatalı.</p>
+                    </th:block>
                     <div class="card-body">
                         <form th:action="@{/login}" th:method="post">
                             <div class="mb-3">
                                 <label>Enter Email</label>
-                                <input type="text" id= "username" name="username" class="form-control">
+                                <input type="text" name="username" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label>EnterPassword</label>
-                                <input type="password" id="password" name="password" class="form-control">
+                                <input type="password" name="password" class="form-control">
                             </div>
                             <button class="btn btn-primary col-md-12" type="submit">Login</button>
                         </form>
