@@ -1,6 +1,5 @@
 package com.grhncnrbs.usermanagementapp.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,7 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig {
+public class SecurityConfiguration {
 
     @Bean
     public UserDetailsService getUserDetailsService() {
@@ -34,9 +33,13 @@ public class SecurityConfig {
         return daoAuthenticationProvider;
     }
 
-    @Bean
+   /* @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
+    }*/
+
+    protected void configure (AuthenticationManagerBuilder authenticationManagerBuilder) {
+        authenticationManagerBuilder.authenticationProvider(getDaoAuthenticationProvider());
     }
 
     @Bean
@@ -52,6 +55,7 @@ public class SecurityConfig {
                         .loginPage("/signin")
                         .loginProcessingUrl("/login")
                         .defaultSuccessUrl("/user"))
+//                        .failureUrl("/invalid"))
                 .logout((logout) -> logout
                         .logoutSuccessUrl("/signin")
                         .permitAll())

@@ -30,6 +30,11 @@ public class HomeController {
         return "redirect:/signin";
     }
 
+    @GetMapping("/invalid")
+    public String invalid() {
+        return "error";
+    }
+
     @GetMapping("/register")
     public String register() {
         return "register";
